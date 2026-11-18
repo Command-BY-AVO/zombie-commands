@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ซอมบี้กินสมอง คำสั่ง</title><link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;700;800&family=Sarabun:wght@400;600&display=swap">
+<style>
+:root{--bg:#0d1b2a;--panel:#14283c;--ink:#eaf4ff;--muted:#9fb6cc;--line:#2a4560;--green:#78e68c;--pink:#ff7896;--gold:#ffd23f;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Sarabun,Kanit,system-ui,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-right)) 64px max(16px,env(safe-area-inset-left));display:grid;gap:32px}
+h1,h2{font-family:Kanit,sans-serif;margin:0}h1{font-size:clamp(28px,5vw,42px)}h2{font-size:24px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}h2 small{font:400 14px Sarabun;color:var(--muted)}
+.hero img{width:100%;border-radius:16px;display:block}.hero p{color:var(--muted);margin:8px 0 0}
+section{display:grid;gap:12px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.cmd{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.clip{aspect-ratio:16/9;background:#000}.clip video{width:100%;height:100%;object-fit:cover;display:block}
+figcaption{padding:12px 14px 14px;display:grid;gap:8px}figcaption p{margin:0}
+.copy{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:8px 12px;border-radius:10px;border:1px solid var(--green);background:#08131e;color:var(--ink);cursor:pointer;font:600 15px Kanit,sans-serif}
+.prank .copy{border-color:var(--pink)}
+.copy code{font:700 16px ui-monospace,monospace;color:var(--gold)}.copy span{font-size:13px;color:var(--muted)}.copy.ok span{color:var(--green)}
+.gifts{display:flex;flex-wrap:wrap;gap:6px}.gift{display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 4px;border-radius:99px;background:#20384f;font-size:13px}.gift img{width:24px;height:24px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:10px}
+.box a{color:var(--gold)} .pics{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))} .pics img{width:100%;border-radius:10px;background:#20384f}
+footer{color:var(--muted);font-size:13px}
+.howto video{width:100%;aspect-ratio:16/9;border-radius:16px;display:block;background:#000}.howto h2{margin:0 0 10px}
+</style></head><body><main>
+<header class="hero"><img src="cover.jpg" alt="ซอมบี้กินสมอง"><h1>ซอมบี้กินสมอง · คำสั่ง</h1>
+<p>เกมไลฟ์ YLTik · ฝูงซอมบี้วิ่งไปบ้านที่ 10,000 ม. · คนดูส่งของขวัญช่วยดัน หรือแกล้งดันถอย/ฆ่าซอมบี้ · ซอมบี้หมด = แพ้ เริ่มใหม่ · ชนะ = วิน +1</p></header>
+
+<section class="box"><h2>📦 พรีเซ็ต + รูป</h2>
+<p>นำเข้าใน YLTik: ไฟล์ <a href="zombie-yltik-preset.jnt" download>zombie-yltik-preset.jnt</a> → Import พรีเซ็ต · ในกฎแต่ละอันใส่คำสั่งในช่อง command ตามปุ่มก๊อปด้านล่าง</p>
+<div class="pics"><img src="pictures/zombie-6.png" alt="บน 3 ล่าง 3"><img src="pictures/zombie-12.png" alt="บน 6 ล่าง 6"><img src="pictures/zombie-14.png" alt="บน 7 ล่าง 7 (มีวิน)"></div>
+<h3>🏆 นับวิน (YLTik)</h3><p>ชนะ = วิน +1 เอง · แพ้/เริ่มใหม่ไม่ลบ · ของขวัญ <b>สู้ ๆ! (299💎) = +1 วิน</b> · <b>คอร์กี้ (299💎) = −1 วิน</b> (กฎแบบ Webhook ยิงไป <code>http://localhost:4621/win/up/1</code> / <code>/win/down/1</code>)</p>
+<div class="pics" style="max-width:200px"><img src="pictures/zombie-win.png" alt="วิน บน-ล่าง"></div></section>
+
+<section><h2>🧟 ช่วย <small>ดันฝูงไปข้างหน้า</small></h2><div class="grid">
+<figure class="cmd"><div class="clip"><video src="media/help.mp4" poster="media/help.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><button class="copy" data-c="push 100"><code>push 100</code><span>ก๊อป</span></button><p>ดันฝูงซอมบี้ไปข้างหน้า · เลข = เมตร (ส่งรัวคูณตามจำนวนครั้ง)</p><div class="gifts"><span class="gift">กด + = ช่วย ดัน 50</span><span class="gift">ไลค์ครบ 100 = ช่วย ดัน 50</span><span class="gift"><img src="gifts/6064.webp" alt="">GG 1💎 = ช่วย ดัน 100</span></div></figcaption></figure>
+<figure class="cmd"><div class="clip"><video src="media/chars.mp4" poster="media/chars.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><button class="copy" data-c="luffy 500"><code>luffy 500</code><span>ก๊อป</span></button><p>ตัวละครช่วยวิ่งมาจากข้างหลัง ดันฝูงไปข้างหน้า มีแสงตามสกิล ยิ่งของแพงแสงยิ่งแรง · คำสั่ง <code>luffy N</code> <code>zoro N</code> <code>whitebeard N</code></p><div class="gifts"><span class="gift"><img src="gifts/105781.webp" alt="">ฟุตบอลหมุน 5💎 = ลูฟี่ ดัน 500</span><span class="gift"><img src="gifts/5779.webp" alt="">ฉันรักคุณ 10💎 = โซโล ดัน 1000</span><span class="gift"><img src="gifts/5660.webp" alt="">มืออุ้มหัวใจ 100💎 = หนวดขาว ดัน 5000</span></div></figcaption></figure>
+<figure class="cmd"><div class="clip"><video src="media/r_help.mp4" poster="media/r_help.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><button class="copy" data-c="random help 200 2000"><code>random help 200 2000</code><span>ก๊อป</span></button><p>สุ่มช่วย: การ์ดหมุนสุ่มเมตร แล้วดันไปข้างหน้าตามที่ได้</p><div class="gifts"><span class="gift"><img src="gifts/19443.webp" alt="">เยี่ยมมาก! 15💎 = สุ่มช่วย 200-2000</span></div></figcaption></figure>
+<figure class="cmd"><div class="clip"><video src="media/shield.mp4" poster="media/shield.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><button class="copy" data-c="shield 20"><code>shield 20</code><span>ก๊อป</span></button><p>โล่: กันโดนแกล้งทุกอย่างตามวินาที</p><div class="gifts"><span class="gift"><img src="gifts/6427.webp" alt="">หมวกกับหนวด 99💎 = โล่ 20 วิ</span></div></figcaption></figure>
+</div></section>
+
+<section class="prank"><h2>💀 แกล้ง <small>ดันถอย / ฆ่าซอมบี้</small></h2><div class="grid">
+<figure class="cmd"><div class="clip"><video src="media/prank.mp4" poster="media/prank.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><button class="copy" data-c="kaido 500"><code>kaido 500</code><span>ก๊อป</span></button><p>ดันฝูงถอยหลัง · ตัวร้ายวิ่งสวนมาจากข้างหน้า · คำสั่ง <code>back N</code> <code>kaido N</code> <code>akainu N</code> <code>blackbeard N</code></p><div class="gifts"><span class="gift"><img src="gifts/5655.webp" alt="">กุหลาบ 1💎 = แกล้ง ถอย 100</span><span class="gift"><img src="gifts/5487.webp" alt="">หัวใจนิ้ว 5💎 = ไคโด ถอย 500</span><span class="gift"><img src="gifts/5658.webp" alt="">น้ำหอม 20💎 = อาคาอินุ ถอย 1500</span><span class="gift"><img src="gifts/5585.webp" alt="">กระดาษโปรย 100💎 = หนวดดำ ถอย 5000</span></div></figcaption></figure>
+<figure class="cmd"><div class="clip"><video src="media/kill.mp4" poster="media/kill.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><button class="copy" data-c="marine 3"><code>marine 3</code><span>ก๊อป</span></button><p>ฆ่าซอมบี้ N ตัว · ถ้าเหลือตัวเดียวแล้วโดน = แพ้ เริ่มใหม่</p><div class="gifts"><span class="gift"><img src="gifts/5879.webp" alt="">โดนัท 30💎 = ทหารเรือ ฆ่า 3</span></div></figcaption></figure>
+<figure class="cmd"><div class="clip"><video src="media/r_prank.mp4" poster="media/r_prank.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><button class="copy" data-c="random prank 200 2000"><code>random prank 200 2000</code><span>ก๊อป</span></button><p>สุ่มแกล้ง: การ์ดหมุนสุ่มเมตร แล้วดันถอยหลังตามที่ได้</p><div class="gifts"><span class="gift"><img src="gifts/13000.webp" alt="">ฮิปโปน้อย 15💎 = สุ่มแกล้ง 200-2000</span></div></figcaption></figure>
+</div></section>
+
+<section><h2>🎮 วิธีเล่น <small>สตรีมเมอร์</small></h2><div class="grid">
+<figure class="cmd"><div class="clip"><video src="media/gameplay.mp4" poster="media/gameplay.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><p>เริ่มจากซอมบี้ 1 ตัว (เรา) วิ่งไป 10,000 ม. · กินคน = +1 ตัว (คนหายาก) · รถมีคนติดอยู่ร้องขอช่วย กินแล้วได้หลายตัว</p></figcaption></figure>
+<figure class="cmd"><div class="clip"><video src="media/moves.mp4" poster="media/moves.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><p>ทุกตัวอ้าปากงับ · กินคนเห็นอ้าปากกว้างก่อนแล้วค่อยเพิ่มตัว</p></figcaption></figure>
+<figure class="cmd"><div class="clip"><video src="media/traffic.mp4" poster="media/traffic.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><p>รถวิ่งสวนมาชนฝูง ซอมบี้ตายบางส่วน · กระโดดข้ามได้</p></figcaption></figure>
+<figure class="cmd"><div class="clip"><video src="media/gap.mp4" poster="media/gap.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><p>หลุมกลางถนน ฝูงกระโดดข้าม บางตัวตกลงไป</p></figcaption></figure>
+<figure class="cmd"><div class="clip"><video src="media/last.mp4" poster="media/last.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><p>เหลือตัวเดียว: สตรีมเมอร์ต้องกดกระโดดหลบเอง โดนอะไร = แพ้ เริ่มใหม่</p></figcaption></figure>
+<figure class="cmd"><div class="clip"><video src="media/door.mp4" poster="media/door.jpg" muted loop playsinline preload="none"></video></div>
+<figcaption><p>ถึงบ้าน: ทุบประตูให้พัง · <b>โดนของแกล้งระหว่างทุบ = "โดนแกล้ง! นับใหม่"</b> ประตูกลับมาเต็ม · พังเข้าไป = ชนะ (วิน +1 ในแอป YLTik)</p></figcaption></figure>
+</div></section>
+<footer>ซอมบี้กินสมอง · เกมของ YL Entertainment · YLTik · หน้าคำสั่งใน Command BY AVO</footer></main>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.c);b.classList.add('ok');b.querySelector('span').textContent='ก๊อปแล้ว';setTimeout(()=>{b.classList.remove('ok');b.querySelector('span').textContent='ก๊อป'},1500)}catch{const r=document.createRange();r.selectNodeContents(b.querySelector('code'));getSelection().removeAllRanges();getSelection().addRange(r)}});
+const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.preload='auto';v.play().catch(()=>{})}else v.pause()}),{threshold:.4});document.querySelectorAll('video').forEach(v=>io.observe(v));
+</script></body></html>
